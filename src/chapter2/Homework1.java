@@ -8,7 +8,7 @@ public class Homework1 {
 
             }
 
-            System.out.println();
+            System.out.println("Updated for git");
         }
     }
 }
