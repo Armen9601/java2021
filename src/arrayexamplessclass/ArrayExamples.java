@@ -39,6 +39,7 @@ public class ArrayExamples {
             z++;
 
         }
+
         for (int i = 0; i < array.length; i++) {
             for (int j = 1; j < array.length; j++) {
                 if (array[j - 1] > array[j]) {
@@ -48,7 +49,6 @@ public class ArrayExamples {
                 }
 
             }
-
         }
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i] + " ");
