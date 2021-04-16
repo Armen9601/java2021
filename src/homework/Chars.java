@@ -24,27 +24,29 @@ public class Chars {
         char[] bolola2 = {'b', 'o', 'l', 'o', 'l', 'a'};
         int k = bolola2.length - 1;
         boolean b = false;
-        if (bolola2[k] == 'l') {
-            b = true;
-        }
+        if (bolola2[k] == 'y'&& bolola2[k - 1] == 'l'){
+            b = true;}
         System.out.println(b);
-//true bob
-        char[] babola={'b','a','b','o','l','a'};
-        boolean bob=false;
-        for (int l = 0; l < babola.length-2; l++) {
-            if (babola[l]==babola[l+2]){
-                bob=true;
-        }
 
-            }System.out.println(bob);
+
+//true bob
+        char[] babola = {'b', 'a', 'b', 'o', 'l', 'a'};
+        boolean bob = false;
+        for (int l = 0; l < babola.length - 2; l++) {
+            if (babola[l] == babola[l + 2]) {
+                bob = true;
+            }
+
+        }
+        System.out.println(bob);
 // barev
-        char[] text ={' ',' ','b','a','r','e','v',' ',' '};
-        for (int l = 0; l < text.length ; l++) {
-            if (text[l]!=' ')
+        char[] text = {' ', ' ', 'b', 'a', 'r', 'e', 'v', ' ', ' '};
+        for (int l = 0; l < text.length; l++) {
+            if (text[l] != ' ')
                 System.out.print(text[l]);
 
         }
-        }
-
     }
+
+}
 
