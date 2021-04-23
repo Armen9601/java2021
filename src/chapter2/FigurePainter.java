@@ -4,7 +4,7 @@ public class FigurePainter {
     void figureOne(int m, int n) {
         for (int i = m; i < n; i++) {
             for (int j = 5; j > i; j--) {
-                System.out.print(" ");
+                System.out.print("Armen jan naye hmi ");
             }
 
             for (int k = 0; k <= i; k++) {
