@@ -2,8 +2,14 @@ package chapter2;
 
 public class FigurePainter {
     void figureOne(int m, int n) {
+        if (m > n) {
+            System.out.println("First number must be grete than second");
+        }
+        if (m == n) {
+            System.out.println("numbers must not  be equal,your number is " + n);
+        }
         for (int i = m; i < n; i++) {
-            for (int j = 5; j > i; j--) {
+            for (int j = n; j > i; j--) {
                 System.out.print(" ");
             }
 
@@ -27,7 +33,7 @@ public class FigurePainter {
 
     void figureThree(int m, int n, char l) {
         for (int i = m; i < n; i++) {
-            for (int j = 4; j > i; j--) {
+            for (int j = n; j > i; j--) {
                 System.out.print(l);
 
             }
@@ -41,21 +47,22 @@ public class FigurePainter {
 
             }
 
-            for (int k = 4; k >= i; k--) {
-                System.out.print(l+" ");
+            for (int k = n; k > i; k--) {
+                System.out.print(l + " ");
 
             }
             System.out.println();
         }
     }
-    void figureFive(int m, int n, char l){
+
+    void figureFive(int m, int n, char l) {
         for (int i = m; i < n; i++) {
             for (int j = 4; j > i; j--) {
                 System.out.print(" ");
             }
 
             for (int k = 1; k <= i; k++) {
-                System.out.print(l+" ");
+                System.out.print(l + " ");
 
             }
             System.out.println(" ");
@@ -66,7 +73,7 @@ public class FigurePainter {
             }
 
             for (int k = 3; k >= i; k--) {
-                System.out.print(l+" ");
+                System.out.print(l + " ");
 
             }
             System.out.println();

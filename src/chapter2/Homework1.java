@@ -1,14 +1,22 @@
 package chapter2;
 
 public class Homework1 {
-    public static void main(String[] args) {
-        for (int i = 0; i < 5; i++) {
+    static void drawTriangle(int n, int m, char l) {
+        for (int i = m; i < n; i++) {
             for (int j = 0; j < i; j++) {
-                System.out.print("* ");
+                System.out.print(l);
 
             }
-
-            System.out.println("Updated for git");
+            System.out.println();
         }
+    }
+
+    public static void main(String[] args) {
+        for (int i = 0; i < 5; i++) {
+
+            drawTriangle(i, 0, '&');
+        }
+
+
     }
 }

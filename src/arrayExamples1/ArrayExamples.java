@@ -3,19 +3,17 @@ package arrayExamples1;
 public class ArrayExamples {
 
 
-    void repeatable( int[] array,int n) {
-        int x =n ;
+    void repeatable(int[] array, int n) {
         boolean b = false;
         for (int i = 0; i < array.length; i++) {
             if (n == array[i]) {
                 b = true;
             }
         }
-        System.out.println(b + " " + x);
+        System.out.println(b + " " + n);
     }
 
-    void IsIndexExists( int[] array,int m) {
-        int y = m;
+    void IsIndexExists(int[] array, int m) {
         boolean n = false;
         for (int i = 0; i < array.length; i++) {
             if (m == array[i]) {
@@ -23,14 +21,13 @@ public class ArrayExamples {
                 n = true;
             }
         }
-        System.out.println(n ? "index " + y : "eror " + -1);
+        System.out.println(n ? "index " + m : "error " + -1);
     }
 
-    void index( int[] array,int m) {
-        int y = m;
+    void index(int[] array, int y) {
         boolean n = false;
         for (int i = 0; i < array.length; i++) {
-            if (m == array[i]) {
+            if (y == array[i]) {
                 y = i;
                 n = true;
             }
@@ -38,22 +35,19 @@ public class ArrayExamples {
         System.out.println(array[y]);
     }
 
-    void repeat( int[] array) {
-        int k = 0;
-        int z = 1;
-        for (int i = k; i < array.length; i++) {
-            int g = array[k];
-            for (int j = z; j < array.length; j++) {
-                if (g == array[j])
-                    System.out.println("krknvum en: " + g);
+    void repeat(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 1; j < array.length; j++) {
+                if (array[i] == array[j]) {
+                    System.out.println("krknvum en: " + array[i]);
+                }
             }
-            k++;
-            z++;
+
 
         }
     }
 
-    void sorting( int[] array) {
+    void sorting(int[] array) {
         for (int i = 0; i < array.length; i++) {
             for (int j = 1; j < array.length; j++) {
                 if (array[j - 1] > array[j]) {
