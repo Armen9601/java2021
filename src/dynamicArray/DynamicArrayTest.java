@@ -23,20 +23,22 @@ public class DynamicArrayTest {
         da.add(30);
         da.add(16);
         da.print();
-        int max = da.maximum();
-        System.out.println("the maximum number of " + max);
-        int min = da.minimum();
-        System.out.println("the minimum number of " + min);
-        da.deleteByIndex(12);
-        da.print();
-        da.deleteByValueFirst(30);
-        da.print();
-        int[] subArray = da.subArray(3);
-        for (int i : subArray) {
-            System.out.print(i + " ");
-        }
-        System.out.println();
-        da.deleteByValue(30);
+//        int max = da.maximum();
+//        System.out.println("the maximum number of " + max);
+//        int min = da.minimum();
+//        System.out.println("the minimum number of " + min);
+//        da.deleteByIndex(12);
+//        da.print();
+//        da.deleteByValueFirst(30);
+//        da.print();
+//        int[] subArray = da.subArray(3);
+//        for (int i : subArray) {
+//            System.out.print(i + " ");
+//        }
+//        System.out.println();
+//        da.deleteByValue(30);
+//        da.print();
+        da.deleteByIndex(10);
         da.print();
     }
 

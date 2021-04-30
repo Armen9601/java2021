@@ -73,7 +73,15 @@ public class DynamicArray {
     public void deleteByIndex(int index) {
         int[] arr1 = new int[size - 1];
         for (int i = 0; i < arr1.length; i++) {
-            arr1[i] = i > index - 1 ? array[i + 1] : array[i];
+            arr1[i] = array[i];
+            if (i == index) {
+                for (int j = i; j < arr1.length; j++) {
+                    arr1[j] = array[j + 1];
+                }
+                break;
+
+            }
+
         }
         size--;
         array = arr1;
