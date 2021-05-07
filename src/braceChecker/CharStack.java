@@ -19,7 +19,7 @@ public class CharStack {
 
     public char pop() {
         if (size < 0) {
-            System.out.println("stack-ը դատարկ է");
+
             return 0;
         } else {
             return array[size--];
@@ -32,5 +32,8 @@ public class CharStack {
 
     public void setArray(char[] array) {
         this.array = array;
+    }
+    public int getSize(){
+        return size;
     }
 }
