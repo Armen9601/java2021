@@ -111,7 +111,7 @@ public class AuthorTest {
         System.out.println("Book price");
         book.setPrice(Integer.parseInt(scanner.nextLine()));
         System.out.println("Book count");
-        book.setCount(scanner.nextLine());
+        book.setCount(Integer.parseInt(scanner.nextLine()));
         System.out.println("Book authorEmail");
         book.setAuthorEmail(scanner.nextLine());
         bookStorage.add(book);
