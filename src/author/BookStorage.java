@@ -53,12 +53,54 @@ public class BookStorage {
                     System.out.println(books[i]);
         }
     }
-//    public void searchByPrice(int price1){
-//        for (int i = 0; i < size; i++) {
-//            if (books[i].getPrice()>=price1){
-//                System.out.println(books[i]);
-//            }
-//
-//        }
-//    }
+
+    public void searchByPrice1(int price1) {
+        for (int i = 0; i < size; i++) {
+            if (books[i].getPrice()>=price1){
+                System.out.println(books[i]);
+            }
+
+        }
+    }
+    public void maximum() {
+        Book max;
+        for (int j = 0; j < size; j++) {
+            for (int k = 0; k < size - 1; k++) {
+                if (books[k].getPrice() < books[k + 1].getPrice()) {
+                    max = books[k + 1];
+                    books[k + 1] = books[k];
+                    books[k] = max;
+                }
+
+            }
+
+        }
+        for (int i = 0; i < size; i++) {
+            System.out.println(books[i]);
+
+        }
+
+    }
+
+
+    public void minimum() {
+        Book min;
+        for (int j = 0; j < size; j++) {
+            for (int k = 0; k < size - 1; k++) {
+                if (books[k].getPrice() > books[k + 1].getPrice()) {
+                    min = books[k + 1];
+                    books[k + 1] = books[k];
+                    books[k] = min;
+                }
+
+            }
+
+        }
+        for (int i = 0; i < size; i++) {
+            System.out.println(books[i]);
+
+        }
+
+
+    }
 }

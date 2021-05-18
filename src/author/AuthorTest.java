@@ -16,8 +16,10 @@ public class AuthorTest {
             System.out.println("Please input 3 for print all Authors ");
             System.out.println("Please input 4 for add book ");
             System.out.println("Please input 5 for print all books ");
-            System.out.println("Please input 6 for Print Books by price range ");
-            System.out.println("Please input 7 for Print Books is book Exists ");
+            System.out.println("Please input 6 for Print Books by price range");
+            System.out.println("Please input 7 for Print Books is book Exists");
+            System.out.println("Please input 8 for sorting prices by maximum");
+            System.out.println("Please input 9 for sorting prices by minimum");
 
             String command = scanner.nextLine();
             switch (command) {
@@ -40,11 +42,28 @@ public class AuthorTest {
                     bookStorage.print();
                     break;
                 case "6":
-                    searchPrice();
+                    System.out.println("please input 1 for only started price");
+                    System.out.println("please input 2 for started and ended prices");
+                    String com1=scanner.nextLine();
+                    switch (com1){
+                        case"1":
+                            searchPrice1();
+                            break;
+                        case"2":
+                            searchPrice();
+                            break;
+                        default:
+                            System.out.println("wrong command");
+                    }
                     break;
                 case"7":
                     bookExist();
                     break;
+                case"8":
+                    bookStorage.maximum();
+                    break;
+                case"9":
+                    bookStorage.minimum();
                 default:
                     System.out.println("wrong command");
 
@@ -52,6 +71,8 @@ public class AuthorTest {
         }
 
     }
+
+
 
     private static void bookExist() {
         System.out.println("please input book title");
@@ -62,10 +83,18 @@ public class AuthorTest {
     }
 
     private static void searchPrice() {
-        System.out.println("please input price");
+        System.out.println("please input started and ended prices");
+        System.out.println("start price");
         int price1=Integer.parseInt(scanner.nextLine());
+        System.out.println("end price");
         int price2=Integer.parseInt(scanner.nextLine());
         bookStorage.searchByPrice(price1,price2);
+
+    }
+    private static void searchPrice1() {
+        System.out.println("please input started price");
+        int price1=Integer.parseInt(scanner.nextLine());
+        bookStorage.searchByPrice1(price1);
 
     }
 
