@@ -1,6 +1,6 @@
 package blog;
 
-import author.Author;
+
 
 public class PostStorageImpl implements PostStorage {
     Post[] posts = new Post[10];
