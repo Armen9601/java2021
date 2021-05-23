@@ -74,15 +74,15 @@ public class DynamicArray {
         int[] arr1 = new int[size - 1];
         for (int i = 0; i < arr1.length; i++) {
             arr1[i] = array[i];
-            if (i == index) {
-                for (int j = i; j < arr1.length; j++) {
-                    arr1[j] = array[j + 1];
-                }
-                break;
+            if (i >= index) {
+               arr1[i]=array[i+1];
 
             }
 
         }
+//        for (int i = 0; i < arr1.length; i++) {
+//            arr1[i] = i > index - 1 ? array[i + 1] : array[i];
+//        }
         size--;
         array = arr1;
     }

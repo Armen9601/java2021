@@ -5,7 +5,7 @@ import java.util.Date;
 public class Post {
     private String title;
     private String text;
-    private String category;
+    private Category category;
     private Date createdData = new Date();
 
     public String getTitle() {
@@ -24,11 +24,11 @@ public class Post {
         this.text = text;
     }
 
-    public String getCategory() {
+    public Category getCategory() {
         return category;
     }
 
-    public void setCategory(String category) {
+    public void setCategory(Category category) {
         this.category = category;
     }
 

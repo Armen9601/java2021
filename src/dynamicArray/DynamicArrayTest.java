@@ -36,10 +36,10 @@ public class DynamicArrayTest {
 //            System.out.print(i + " ");
 //        }
 //        System.out.println();
-//        da.deleteByValue(30);
-//        da.print();
-        da.deleteByIndex(10);
+        da.deleteByValue(30);
         da.print();
+//        da.deleteByIndex(3);
+//        da.print();
     }
 
 }

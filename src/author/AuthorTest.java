@@ -138,10 +138,17 @@ public class AuthorTest {
         System.out.println("Book description");
         book.setDescription(scanner.nextLine());
         System.out.println("Book price");
-        book.setPrice(Integer.parseInt(scanner.nextLine()));
-        System.out.println("Book count");
-        book.setCount(Integer.parseInt(scanner.nextLine()));
-        System.out.println("Book authorEmail");
+        try{
+            book.setPrice(Integer.parseInt(scanner.nextLine()));
+            System.out.println("Book count");
+            book.setCount(Integer.parseInt(scanner.nextLine()));
+            System.out.println("Book authorEmail");
+        }catch(NumberFormatException e){
+            System.out.println("please input valid number");
+           addBook();
+        }
+
+
         book.setAuthorEmail(scanner.nextLine());
         bookStorage.add(book);
     }

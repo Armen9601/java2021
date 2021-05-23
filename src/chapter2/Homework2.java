@@ -2,12 +2,10 @@ package chapter2;
 
 public class Homework2 {
     public static void main(String[] args) {
-        for (int i = 0; i < 4; i++) {
-            for (int j = 4; j > i; j--) {
-                System.out.print("* ");
-
-            }
-            System.out.println();
+        int [] array ={15,25,45,65,657,89,89};
+        for (int i : array) {
+            System.out.println(i);
+        }
         }
     }
-}
+

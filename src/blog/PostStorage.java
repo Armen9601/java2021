@@ -7,6 +7,9 @@ public interface PostStorage {
     int POSTS_BY_CATEGORY = 3;
     int ALL_POSTS = 4;
     int GET_BY_TITLE = 5;
+    int DELETE_POST = 6;
+    int CHANGE_POST = 7;
+    int DELETE_BY_CATEGORY = 8;
 
     void add(Post post);
 
@@ -17,5 +20,13 @@ public interface PostStorage {
     void printAllPosts();
 
     void printPostsByCategory(String category);
+
+    void deletePost(String title);
+
+    void deleteByCategory(Category category);
+
+    void changePost(String title);
+
+    void newChange(String text, Category category);
 }
 

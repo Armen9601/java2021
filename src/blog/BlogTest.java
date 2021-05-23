@@ -12,12 +12,16 @@ public class BlogTest {
 
         boolean run = true;
         while (run) {
+
             System.out.println("Please input " + PostStorage.EXIT + " for EXIT");
             System.out.println("Please input " + PostStorage.ADD_POST + " for ADD_POST");
             System.out.println("Please input " + PostStorage.SEARCH_POST + " for SEARCH_POST");
             System.out.println("Please input " + PostStorage.POSTS_BY_CATEGORY + " for print POSTS_BY_CATEGORY");
             System.out.println("Please input " + PostStorage.ALL_POSTS + " for print ALL_POSTS");
-            System.out.println("Please input " + PostStorage.GET_BY_TITLE + " for print ALL_POSTS");
+            System.out.println("Please input " + PostStorage.GET_BY_TITLE + " for GET_BY_TITLE");
+            System.out.println("Please input " + PostStorage.DELETE_POST + " for DELETE_POST");
+            System.out.println("Please input " + PostStorage.CHANGE_POST + " for CHANGE_POST");
+            System.out.println("Please input " + PostStorage.DELETE_BY_CATEGORY + " for DELETE_BY_CATEGORY");
             int coomand = Integer.parseInt(scanner.nextLine());
             switch (coomand) {
                 case PostStorage.EXIT:
@@ -37,11 +41,44 @@ public class BlogTest {
                     break;
                 case PostStorage.GET_BY_TITLE:
                     getByTitle();
+                    break;
+                case PostStorage.DELETE_POST:
+                    deletePost();
+                    break;
+                case PostStorage.CHANGE_POST:
+                    changePost();
+                    break;
+                case PostStorage.DELETE_BY_CATEGORY:
+                    deleteByCategory();
+                    break;
                 default:
                     System.out.println("Wrong command");
 
             }
         }
+    }
+
+    private static void changePost() {
+        System.out.println("please input title for change text and category ");
+        String title = scanner.nextLine();
+        postStorageImpl.changePost(title);
+        System.out.println("please input new text");
+        String text = scanner.nextLine();
+        System.out.println("please input new category");
+        Category category = Category.valueOf(scanner.nextLine());
+        postStorageImpl.newChange(text, category);
+    }
+
+    private static void deleteByCategory() {
+        System.out.println("Plese input category for deleted all posts its category");
+        Category category = Category.valueOf(scanner.nextLine());
+        postStorageImpl.deleteByCategory(category);
+    }
+
+    private static void deletePost() {
+        System.out.println("Plese input title for deleted post");
+        String title = scanner.nextLine();
+        postStorageImpl.deletePost(title);
     }
 
     private static void getByTitle() {
@@ -69,13 +106,27 @@ public class BlogTest {
         System.out.println("Please input title");
         String title = scanner.nextLine();
         post.setTitle(title);
-        System.out.println("plese input text");
+        System.out.println("please input text");
         String text = scanner.nextLine();
         post.setText(text);
-        System.out.println("please input category");
-        String category = scanner.nextLine();
-        post.setCategory(category);
+        try {
+            System.out.println("please input category ");
+            categoryPrint();
+            Category category = Category.valueOf(scanner.nextLine());
+            post.setCategory(category);
+        } catch (IllegalArgumentException e) {
+            System.out.println("please input valid category");
+            addPost();
+
+        }
         post.setCreatedData(date);
         postStorageImpl.add(post);
+    }
+
+    public static void categoryPrint() {
+        Category[] values = Category.values();
+        for (Category value : values) {
+            System.out.println(value);
+        }
     }
 }
