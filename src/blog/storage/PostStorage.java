@@ -1,4 +1,7 @@
-package blog;
+package blog.storage;
+
+import blog.enums.Category;
+import blog.object.Post;
 
 public interface PostStorage {
     int EXIT = 0;

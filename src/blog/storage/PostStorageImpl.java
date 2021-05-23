@@ -1,5 +1,8 @@
-package blog;
+package blog.storage;
 
+
+import blog.enums.Category;
+import blog.object.Post;
 
 public class PostStorageImpl implements PostStorage {
     Post[] posts = new Post[10];

@@ -1,5 +1,10 @@
 package blog;
 
+import blog.enums.Category;
+import blog.object.Post;
+import blog.storage.PostStorage;
+import blog.storage.PostStorageImpl;
+
 import java.util.Date;
 import java.util.Scanner;
 

@@ -1,4 +1,6 @@
-package blog;
+package blog.object;
+
+import blog.enums.Category;
 
 import java.util.Date;
 
