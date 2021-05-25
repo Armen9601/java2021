@@ -1,7 +1,7 @@
 package blog;
 
 import blog.enums.Category;
-import blog.object.Post;
+import blog.model.Post;
 import blog.storage.PostStorage;
 import blog.storage.PostStorageImpl;
 
@@ -75,9 +75,9 @@ public class BlogTest {
     }
 
     private static void deleteByCategory() {
-        System.out.println("Plese input category for deleted all posts its category");
-        Category category = Category.valueOf(scanner.nextLine());
-        postStorageImpl.deleteByCategory(category);
+        System.out.println("Please input category for deleted all posts its category");
+        String category =scanner.nextLine();
+        postStorageImpl.delete(category);
     }
 
     private static void deletePost() {

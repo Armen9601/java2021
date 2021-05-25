@@ -1,7 +1,7 @@
 package blog.storage;
 
 import blog.enums.Category;
-import blog.object.Post;
+import blog.model.Post;
 
 public interface PostStorage {
     int EXIT = 0;
@@ -26,10 +26,10 @@ public interface PostStorage {
 
     void deletePost(String title);
 
-    void deleteByCategory(Category category);
-
     void changePost(String title);
 
     void newChange(String text, Category category);
+
+    void delete(String category);
 }
 

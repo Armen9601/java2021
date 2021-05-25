@@ -1,4 +1,4 @@
-package blog.object;
+package blog.model;
 
 import blog.enums.Category;
 
@@ -9,6 +9,16 @@ public class Post {
     private String text;
     private Category category;
     private Date createdData = new Date();
+
+    public Post(String title, String text, Category category, Date createdData) {
+        this.title = title;
+        this.text = text;
+        this.category = category;
+        this.createdData = createdData;
+    }
+
+    public Post() {
+    }
 
     public String getTitle() {
         return title;
