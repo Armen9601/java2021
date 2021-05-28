@@ -1,6 +1,7 @@
 package blog;
 
 import blog.enums.Category;
+import blog.interfaces.Command;
 import blog.model.Post;
 import blog.storage.PostStorage;
 import blog.storage.PostStorageImpl;
@@ -18,42 +19,42 @@ public class BlogTest {
         boolean run = true;
         while (run) {
 
-            System.out.println("Please input " + PostStorage.EXIT + " for EXIT");
-            System.out.println("Please input " + PostStorage.ADD_POST + " for ADD_POST");
-            System.out.println("Please input " + PostStorage.SEARCH_POST + " for SEARCH_POST");
-            System.out.println("Please input " + PostStorage.POSTS_BY_CATEGORY + " for print POSTS_BY_CATEGORY");
-            System.out.println("Please input " + PostStorage.ALL_POSTS + " for print ALL_POSTS");
-            System.out.println("Please input " + PostStorage.GET_BY_TITLE + " for GET_BY_TITLE");
-            System.out.println("Please input " + PostStorage.DELETE_POST + " for DELETE_POST");
-            System.out.println("Please input " + PostStorage.CHANGE_POST + " for CHANGE_POST");
-            System.out.println("Please input " + PostStorage.DELETE_BY_CATEGORY + " for DELETE_BY_CATEGORY");
+            System.out.println("Please input " + Command.EXIT + " for EXIT");
+            System.out.println("Please input " + Command.ADD_POST + " for ADD_POST");
+            System.out.println("Please input " + Command.SEARCH_POST + " for SEARCH_POST");
+            System.out.println("Please input " + Command.POSTS_BY_CATEGORY + " for print POSTS_BY_CATEGORY");
+            System.out.println("Please input " + Command.ALL_POSTS + " for print ALL_POSTS");
+            System.out.println("Please input " + Command.GET_BY_TITLE + " for GET_BY_TITLE");
+            System.out.println("Please input " + Command.DELETE_POST + " for DELETE_POST");
+            System.out.println("Please input " + Command.CHANGE_POST + " for CHANGE_POST");
+            System.out.println("Please input " + Command.DELETE_BY_CATEGORY + " for DELETE_BY_CATEGORY");
             int coomand = Integer.parseInt(scanner.nextLine());
             switch (coomand) {
-                case PostStorage.EXIT:
+                case Command.EXIT:
                     run = false;
                     break;
-                case PostStorage.ADD_POST:
+                case Command.ADD_POST:
                     addPost();
                     break;
-                case PostStorage.SEARCH_POST:
+                case Command.SEARCH_POST:
                     searchPost();
                     break;
-                case PostStorage.POSTS_BY_CATEGORY:
+                case Command.POSTS_BY_CATEGORY:
                     postByCategory();
                     break;
-                case PostStorage.ALL_POSTS:
+                case Command.ALL_POSTS:
                     postStorageImpl.printAllPosts();
                     break;
-                case PostStorage.GET_BY_TITLE:
+                case Command.GET_BY_TITLE:
                     getByTitle();
                     break;
-                case PostStorage.DELETE_POST:
+                case Command.DELETE_POST:
                     deletePost();
                     break;
-                case PostStorage.CHANGE_POST:
+                case Command.CHANGE_POST:
                     changePost();
                     break;
-                case PostStorage.DELETE_BY_CATEGORY:
+                case Command.DELETE_BY_CATEGORY:
                     deleteByCategory();
                     break;
                 default:
@@ -66,12 +67,14 @@ public class BlogTest {
     private static void changePost() {
         System.out.println("please input title for change text and category ");
         String title = scanner.nextLine();
-        postStorageImpl.changePost(title);
+        Post post =postStorageImpl.getPostByTitle(title);
         System.out.println("please input new text");
         String text = scanner.nextLine();
+        post.setText(text);
         System.out.println("please input new category");
         Category category = Category.valueOf(scanner.nextLine());
-        postStorageImpl.newChange(text, category);
+        post.setCategory(category);
+
     }
 
     private static void deleteByCategory() {

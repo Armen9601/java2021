@@ -1,6 +1,6 @@
 package author;
 
-import java.util.Scanner;
+
 
 public class Author {
     private String name;

@@ -7,7 +7,7 @@ import blog.model.Post;
 public class PostStorageImpl implements PostStorage {
     Post[] posts = new Post[10];
 
-    int size =0;
+    int size = 0;
     private int x;
 
     public PostStorageImpl() {
@@ -35,12 +35,11 @@ public class PostStorageImpl implements PostStorage {
 
     @Override
     public Post getPostByTitle(String title) {
-        Post post = new Post();
         for (int i = 0; i < size; i++) {
             if (posts[i].getTitle().equalsIgnoreCase(title))
-                post = posts[i];
+                return posts[i];
         }
-        return post;
+        return null;
     }
 
 
@@ -66,41 +65,21 @@ public class PostStorageImpl implements PostStorage {
 
     @Override
     public void deletePost(String title) {
-        Post[] posts1 = new Post[size - 1];
-        for (int i = 0; i < posts1.length; i++) {
-            posts1[i] = posts[i];
-            if (posts1[i].getTitle().equalsIgnoreCase(title)) {
-                for (int j = 0; j < posts1.length; j++) {
-                    posts1[j] = posts[j + 1];
-
-                }
-                break;
-            }
-
-        }
-        size--;
-        posts = posts1;
-
-    }
-
-
-
-
-    @Override
-    public void changePost(String title) {
         for (int i = 0; i < size; i++) {
-            if (posts[i].getTitle().equalsIgnoreCase(title)) {
-                x = i;
+            if (posts[i].getTitle().equalsIgnoreCase(title)&&posts[i+1]!=null) {
+                Post del = posts[i + 1];
+                posts[i + 1] = posts[i];
+                posts[i] = del;
+
             }
 
         }
+        posts[size - 1] = null;
+        size--;
+
+
     }
 
-    @Override
-    public void newChange(String text, Category category) {
-        posts[x].setText(text);
-        posts[x].setCategory(category);
-    }
 
     public void delete(String category) {
         Post[] newPosts = new Post[size];
