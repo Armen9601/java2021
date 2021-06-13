@@ -9,7 +9,7 @@ public class UserStorage {
     Map<String, User> userMap = new HashMap<>();
 
     public void add(User user) {
-        userMap.put(user.getPhoneNumber(), user);
+        userMap.put(user.getPhoneNumber(),user);
 
     }
 

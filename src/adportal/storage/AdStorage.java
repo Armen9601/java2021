@@ -9,7 +9,7 @@ import java.util.List;
 
 public class AdStorage {
 
-    List<Advertisment> advertismentList = new ArrayList<>();
+    List<Advertisment> advertismentList = new ArrayList<>(2);
 
 
     public void add(Advertisment advertisment) {

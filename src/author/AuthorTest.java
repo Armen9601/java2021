@@ -20,6 +20,7 @@ public class AuthorTest {
             System.out.println("Please input 7 for Print Books is book Exists");
             System.out.println("Please input 8 for sorting prices by maximum");
             System.out.println("Please input 9 for sorting prices by minimum");
+            System.out.println("sxme 10 or jnjes posty");
 
             String command = scanner.nextLine();
             switch (command) {
@@ -44,56 +45,66 @@ public class AuthorTest {
                 case "6":
                     System.out.println("please input 1 for only started price");
                     System.out.println("please input 2 for started and ended prices");
-                    String com1=scanner.nextLine();
-                    switch (com1){
-                        case"1":
+                    String com1 = scanner.nextLine();
+                    switch (com1) {
+                        case "1":
                             searchPrice1();
                             break;
-                        case"2":
+                        case "2":
                             searchPrice();
                             break;
                         default:
                             System.out.println("wrong command");
                     }
                     break;
-                case"7":
+                case "7":
                     bookExist();
                     break;
-                case"8":
+                case "8":
                     bookStorage.maximum();
                     break;
-                case"9":
+                case "9":
                     bookStorage.minimum();
+                    break;
+                case "10":
+                    jnje();
                 default:
                     System.out.println("wrong command");
 
             }
         }
 
+
     }
 
+    private static void jnje() {
+        System.out.println("anuny tur or jnjem");
+
+        authorStorage.jnje(scanner.nextLine());
+    }
 
 
     private static void bookExist() {
         System.out.println("please input book title");
-        String title=scanner.nextLine();
+        String title = scanner.nextLine();
         System.out.println("please input Author email");
-        String email=scanner.nextLine();
-        bookStorage.findbook(title,email);
+        String email = scanner.nextLine();
+        bookStorage.findbook(title, email);
     }
 
     private static void searchPrice() {
         System.out.println("please input started and ended prices");
         System.out.println("start price");
-        int price1=Integer.parseInt(scanner.nextLine());
+        int price1 = Integer.parseInt(scanner.nextLine());
         System.out.println("end price");
-        int price2=Integer.parseInt(scanner.nextLine());
-        bookStorage.searchByPrice(price1,price2);
+        int price2 = Integer.parseInt(scanner.nextLine());
+        bookStorage.searchByPrice(price1, price2);
 
     }
+
     private static void searchPrice1() {
         System.out.println("please input started price");
-        int price1=Integer.parseInt(scanner.nextLine());
+        int price1 = Integer.parseInt(scanner.nextLine());
         bookStorage.searchByPrice1(price1);
 
     }
@@ -125,9 +136,10 @@ public class AuthorTest {
         }
 
         author.setGender(gender);
+
         authorStorage.add(author);
 
-
+        author.getName();
     }
 
     public static void addBook() {
@@ -138,14 +150,14 @@ public class AuthorTest {
         System.out.println("Book description");
         book.setDescription(scanner.nextLine());
         System.out.println("Book price");
-        try{
+        try {
             book.setPrice(Integer.parseInt(scanner.nextLine()));
             System.out.println("Book count");
             book.setCount(Integer.parseInt(scanner.nextLine()));
             System.out.println("Book authorEmail");
-        }catch(NumberFormatException e){
+        } catch (NumberFormatException e) {
             System.out.println("please input valid number");
-           addBook();
+            addBook();
         }
 
 

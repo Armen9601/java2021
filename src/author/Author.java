@@ -1,11 +1,12 @@
 package author;
 
 
+import java.io.Serializable;
 
-public class Author {
+public class Author implements Serializable {
     private String name;
     private String surname;
-    private String email;
+    private transient String  email;
     private int age;
     private String gender;
 

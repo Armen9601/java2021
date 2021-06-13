@@ -11,4 +11,5 @@ public interface Commands {
     int PRINT_AD_BY_CATEGORY=4;
     int DELETE_MY_ALL_ADS=5;
     int DELETE_AD_BY_TITLE=6;
+
 }

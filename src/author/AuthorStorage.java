@@ -4,6 +4,8 @@ package author;
 import java.util.Scanner;
 
 class AuthorStorage {
+    int x=6;
+
     private int size = 0;
     Author[] authors = new Author[10];
 
@@ -15,6 +17,7 @@ class AuthorStorage {
         authors[size] = author;
         size++;
     }
+
 
 
     //stexcel hin masivic  10 element aveli mec masiv
@@ -41,8 +44,18 @@ class AuthorStorage {
         for (int i = 0; i < size; i++) {
             if (authors[i].getName().contains(name)){
                 System.out.println(authors[i]);
+
             }
 
+        }
+    }
+
+
+    public void jnje(String anun) {
+        for (int i = 0; i < size; i++) {
+            if (authors[i].getName().equals(anun)){
+                authors[i]=authors[i+1];
+            }
         }
     }
 }

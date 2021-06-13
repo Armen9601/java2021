@@ -7,6 +7,7 @@ import adportal.model.User;
 import adportal.storage.AdStorage;
 import adportal.storage.UserStorage;
 import adportal.enums.Category;
+import author.Author;
 
 import java.util.Scanner;
 
@@ -18,6 +19,7 @@ public class AdPortalTest {
 
 
     public static void main(String[] args) {
+        
         boolean run = true;
         while (run) {
             System.out.println("Please input " + Commands.EXIT + " for Exit");
@@ -38,6 +40,7 @@ public class AdPortalTest {
                         boolean isLogin = userStorage.logIn(phoneNumber, password);
                         if (isLogin) {
                             loginUser = userStorage.getUserByPhoneNumber(phoneNumber);
+
                         }
                         while (isLogin) {
                             System.out.println("please input " + Commands.LOGOUT + " for log out");
@@ -90,7 +93,9 @@ public class AdPortalTest {
 
             }
         }
-
+        Author koxkiklass=new Author();
+        String name=scanner.nextLine();
+        koxkiklass.setName(name);
     }
 
     private static void addAD() {
@@ -107,7 +112,7 @@ public class AdPortalTest {
             double price = Double.parseDouble(scanner.nextLine());
             advertisment.setPrice(price);
         } catch (NumberFormatException e) {
-            System.out.println("please inpud price");
+            System.out.println("please input price");
             addAD();
         }
         System.out.println("please input category");

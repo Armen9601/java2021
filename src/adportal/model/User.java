@@ -2,7 +2,7 @@ package adportal.model;
 
 import java.util.Objects;
 
-public class User {
+public class User implements Comparable<User> {
     String name;
     String surname;
     String gender;
@@ -27,7 +27,6 @@ public class User {
     public String getName() {
         return name;
     }
-
 
 
     public void setName(String name) {
@@ -97,5 +96,11 @@ public class User {
                 ", phoneNumber=" + phoneNumber +
                 ", password='" + password + '\'' +
                 '}';
+    }
+
+    @Override
+    public int compareTo(User o) {
+       int result=name.compareTo(o.name);
+       return result;
     }
 }
