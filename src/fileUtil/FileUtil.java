@@ -87,14 +87,19 @@ public class FileUtil {
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader(txtPath));
 
-            String line = null;
+            String line;
+            int i=0;
 
-            while (bufferedReader.readLine() != null) {
-                line = bufferedReader.readLine();
-                if (line.contains(keyword)) {
+            while ((line=bufferedReader.readLine()) != null) {
+//                line = bufferedReader.readLine();
 
-                    System.out.println(line);
-                }
+                i++;
+                    if (line.contains(keyword)) {
+
+                        System.out.println(i);
+                    }
+
+
             }
             if (line == null) {
                 System.out.println("no results found");
